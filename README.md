@@ -16,6 +16,8 @@ Currently there is no logic in place for the units (soldiers) in the game of Pol
 
 There are *core objectives* which are the main part of the task, and are more straightforward. There will also be *extension objectives* which you might have to think a bit more about, so feel free to give them a try if you want, but they're optional.
 
+Make sure you open a feature branch for your changes, and open a PR to `main` once they are ready :)
+
 ### Core objectives:
 1. Create a class for units.
 2. Create methods that will allow the unit to move to another square, and to attack other units. Make sure that your methods are consistent with the rules of the game.
