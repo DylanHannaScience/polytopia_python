@@ -81,3 +81,5 @@ class GameMap:
         self.map_state_array[self.second_city_indexes + (UNIT_TEAM_CHANNEL,)] = 2
         self.map_state_array[self.second_city_indexes + (UNIT_HEALTH_CHANNEL,)] = 10
         self.map_state_array[self.second_city_indexes + (UNIT_STATE_CHANNEL,)] = 2
+
+
