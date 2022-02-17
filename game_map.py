@@ -44,7 +44,7 @@ class GameMap:
         self.map_state_array[self.first_city_indexes + (TILE_PROPERTY_CHANNEL,)] = 1
         self.map_state_array[self.second_city_indexes + (TILE_PROPERTY_CHANNEL,)] = 2
 
-    def assign_tiles_eligible_for_city_to_true(self, city_boolean_mask):
+    def assign_tiles_eligible_for_city_to_true(self, city_boolean_mask: np.ndarray) -> np.ndarray:
 
         if len(self.first_city_indexes) == 0:
             city_boolean_mask[1:MAP_HEIGHT-1, 1:MAP_WIDTH-1] = 1
@@ -54,15 +54,15 @@ class GameMap:
         return city_boolean_mask
 
     @staticmethod
-    def set_tiles_too_close_to_first_city_to_false(city_boolean_mask,
-                                                   first_city_indexes):
-        city_boolean_mask[max([first_city_indexes[0]-1, 0]):min([first_city_indexes[0]+1, MAP_WIDTH]),
-                          max([first_city_indexes[1]-1, 0]):min([first_city_indexes[1]+1, MAP_HEIGHT])] = False
+    def set_tiles_too_close_to_first_city_to_false(city_boolean_mask: np.ndarray,
+                                                   first_city_indexes: tuple) -> np.ndarray:
+        city_boolean_mask[max([first_city_indexes[0]-1, 0]):min([first_city_indexes[0]+2, MAP_WIDTH]),
+                          max([first_city_indexes[1]-1, 0]):min([first_city_indexes[1]+2, MAP_HEIGHT])] = False
 
         return city_boolean_mask
 
     @staticmethod
-    def get_eligible_tile_indexes(city_boolean_mask):
+    def get_eligible_tile_indexes(city_boolean_mask: np.ndarray) -> list:
 
         row_column_index_arrays_for_eligible_tiles = np.where(city_boolean_mask)
         eligible_tile_indexes = [coordinate_tuple for coordinate_tuple in
@@ -81,5 +81,4 @@ class GameMap:
         self.map_state_array[self.second_city_indexes + (UNIT_TEAM_CHANNEL,)] = 2
         self.map_state_array[self.second_city_indexes + (UNIT_HEALTH_CHANNEL,)] = 10
         self.map_state_array[self.second_city_indexes + (UNIT_STATE_CHANNEL,)] = 2
-
 

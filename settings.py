@@ -1,3 +1,5 @@
+import pathlib
+
 MAP_HEIGHT = 6
 MAP_WIDTH = 6
 
@@ -56,3 +58,5 @@ CHANNEL_ATTRIBUTES = {0: {"channel name": "tile property",
 # - Current player team (0/1)
 # - Number of Stars
 # - Number of units (0-2)
+
+BASE_DIR = str(pathlib.Path(__file__).parent.resolve())

@@ -1,5 +1,6 @@
 # Standard Python
 import copy
+import os
 
 # Third-party
 import numpy as np
@@ -39,17 +40,18 @@ class MapRenderer:
                 tile_y_start_coord, tile_y_end_coord = self.get_tile_y_coordinates(row, column)
                 tile_x_start_coord, tile_x_end_coord = self.get_tile_x_coordinates(row, column)
 
+                map_array_with_tile[tile_y_start_coord:tile_y_end_coord,
+                                    tile_x_start_coord:tile_x_end_coord,
+                                    :] = grass_tile_array
+                rendered_tile_in_map_space = Image.fromarray(map_array_with_tile)
+                rendered_map_img.alpha_composite(rendered_tile_in_map_space)
 
-                map_array_with_tile[starting_tile_position_y+(tile_y_modifier*(row+column)):starting_tile_position_y+(tile_y_modifier*(row+column))+self.tile_height,
-                map_start_x+(tile_x_modifier*(column-row)):map_start_x+(tile_x_modifier*(column-row))+tile_width,
-                :] = grass_tile_array
-                map_img_with_tile = Image.fromarray(map_array_with_tile)
-                map_img.alpha_composite(map_img_with_tile)
+        rendered_map_img.save(os.path.join(settings.BASE_DIR, "rendered_images/rendered_map.png"))
 
 
     @staticmethod
-    def load_grass_tile():
-        grass_tile_img = Image.open("image_assets/Grass.webp")
+    def load_grass_tile_img():
+        grass_tile_img = Image.open(os.path.join(settings.BASE_DIR, "image_assets/Grass.webp"))
 
         return grass_tile_img
 
@@ -66,3 +68,14 @@ class MapRenderer:
         tile_y_end_coord = self.starting_tile_position_y+(tile_y_modifier*(row+column))+self.tile_height
 
         return tile_y_start_coord, tile_y_end_coord
+
+    def get_tile_x_coordinates(self, row, column):
+
+        tile_x_start_coord = self.starting_tile_position_x+(tile_x_modifier*(column-row))
+        tile_x_end_coord = self.starting_tile_position_x+(tile_x_modifier*(column-row))+self.tile_width
+
+        return tile_x_start_coord, tile_x_end_coord
+
+
+map_renderer = MapRenderer()
+map_renderer.render_terrain_tiles()
