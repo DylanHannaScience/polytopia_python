@@ -46,11 +46,13 @@ class GameMap:
 
     def assign_tiles_eligible_for_city_to_true(self, city_boolean_mask: np.ndarray) -> np.ndarray:
 
-        if len(self.first_city_indexes) == 0:
+        if not len(self.first_city_indexes):
             city_boolean_mask[1:MAP_HEIGHT-1, 1:MAP_WIDTH-1] = 1
         else:
-            city_boolean_mask = self.set_tiles_too_close_to_first_city_to_false(city_boolean_mask,
-                                                                                self.first_city_indexes)
+            city_boolean_mask = self.set_tiles_too_close_to_first_city_to_false(
+                city_boolean_mask,
+                self.first_city_indexes
+            )
         return city_boolean_mask
 
     @staticmethod
@@ -64,10 +66,8 @@ class GameMap:
     @staticmethod
     def get_eligible_tile_indexes(city_boolean_mask: np.ndarray) -> list:
 
-        row_column_index_arrays_for_eligible_tiles = np.where(city_boolean_mask)
-        eligible_tile_indexes = [coordinate_tuple for coordinate_tuple in
-                                 zip(row_column_index_arrays_for_eligible_tiles[0],
-                                     row_column_index_arrays_for_eligible_tiles[1])]
+        row_index_arrays, column_index_arrays = np.where(city_boolean_mask)
+        eligible_tile_indexes = list(zip(row_index_arrays, column_index_arrays))
 
         return eligible_tile_indexes
 

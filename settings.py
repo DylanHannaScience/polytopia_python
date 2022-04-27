@@ -9,6 +9,13 @@ UNIT_STATE_CHANNEL = 2
 UNIT_TEAM_CHANNEL = 3
 UNIT_HEALTH_CHANNEL = 4
 
+UNIT_CHANNELS = [UNIT_TEAM_CHANNEL, UNIT_HEALTH_CHANNEL, UNIT_TEAM_CHANNEL, UNIT_TYPE_CHANNEL]
+
+ UNIT_TYPES = {
+     "no unit": 0, 
+     "warrior": 1
+ }
+
 CHANNEL_ATTRIBUTES = {0: {"channel name": "tile property",
                           "description": """
                           What 'property' is on the tile, such as a resource type (forest, animal, etc.).

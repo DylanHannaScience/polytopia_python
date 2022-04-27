@@ -1,5 +1,3 @@
-
-
 # Local
 from game_map import GameMap
 import settings
