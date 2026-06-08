@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+</head>
+<body>
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<form action="#" method="post">
+		<h2 class="display-4">-Settings-</h2>
+		<h3>Audio Volume</h3>
+
+		<!-- Volume Slider -->
+		<div class="volume-slider">
+			<label for="volumeRange">Volume: <span id="volumeValue">50%</span></label>
+			<input type="range" id="volumeRange" name="volume" min="0" max="100" value="50" />
+		</div>
+
+		<!-- Sound Effect Checkboxes -->
+		<ol class="settings">
+			<span class="sound-settings">
+				<h2>Sound Settings</h2>
+
+				<!--	Instead of checked and unchecked icons there should be ON and OFF white texts in a lightblue background -->
+				<!-- .hover style: black texts in a white background  -->
+
+			<li>
+				Sound Effects
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+
+			</li>
+			<li>
+				Ambience
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			<li>
+				Tribe Music
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			</span>
+
+			<hr />
+
+			<span class="game-settings">
+				<h2>Game Settings</h2>
+
+			<li>
+				Suggestion
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			<li>
+				Info on build
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			<li>
+				Confirm Turn
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			</span>
+
+				<hr />
+
+			<span class="replay-settings">
+				<h2>Replay Settings</h2>
+			<li>
+				Replay Fog
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+
+			</li>
+			<li>
+				Shared Fog
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			<li>
+				Auto Focus
+				<img src="~/images/soundxf-ico.png" alt="sound effects icon" class="icon">
+				<label class="toggle">
+					<input type="checkbox" name="soundEffect1" />
+					<span class="toggle-btn"></span>
+				</label>
+			</li>
+			</span>
+		</ol>
+
+		<!-- Hidden Submit Button -->
+		<input type="submit" style="display: none;" />
+	</form>
+</div>
+
+<!-- JavaScript for Slider Interaction -->
+<script>
+	const volumeRange = document.getElementById('volumeRange');
+	const volumeValue = document.getElementById('volumeValue');
+
+	volumeRange.addEventListener('input', () => {
+		volumeValue.textContent = volumeRange.value + '%';
+	});
+</script>
+
+<!-- CSS for Styling -->
+<style>
+	.volume-slider {
+		margin: 20px 0;
+	}
+
+		.volume-slider input[type="range"] {
+			width: 60%;
+		}
+
+	.settings {
+		list-style: none;
+		padding: 0;
+	}
+
+		.settings li {
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+		}
+
+		.settings img.icon {
+			width: 24px;
+			height: 24px;
+			margin: 0 10px;
+		}
+
+		.settings .sound-settings {
+			/*TODO*/
+		}
+
+		.settings .game-settings {
+			/*TODO*/
+		}
+
+		.settings .replay-settings {
+			/*TODO*/
+		}
+
+
+	/* Toggle Button Style */
+	.toggle {
+		margin-left: auto;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+	}
+
+		.toggle input[type="checkbox"] {
+			display: none; /* Hide default checkbox */
+		}
+
+		.toggle .toggle-btn {
+			display: inline-block;
+			width: 60px;
+			text-align: center;
+			padding: 5px 0;
+			font-size: 14px;
+			font-weight: bold;
+			color: white;
+			background-color: lightblue;
+			border-radius: 5px;
+			user-select: none;
+			transition: all 0.3s ease;
+		}
+
+		.toggle input[type="checkbox"]:checked + .toggle-btn {
+			content: 'ON';
+			background-color: lightblue;
+			color: white;
+		}
+
+		.toggle input[type="checkbox"]:not(:checked) + .toggle-btn {
+			content: 'OFF';
+			background-color: lightblue;
+			color: white;
+		}
+
+		.toggle input[type="checkbox"]:checked + .toggle-btn::after {
+			content: 'ON';
+		}
+
+		.toggle input[type="checkbox"]:not(:checked) + .toggle-btn::after {
+			content: 'OFF';
+		}
+
+		/* Hover Effect */
+		.toggle .toggle-btn:hover {
+			background-color: white;
+			color: black;
+			border: 1px solid black;
+		}
+</style>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>the Battle of Polytopia</h1>
+<p>This is the Index page. Explore other sections using the navigation above.</p>
+{% endblock %}
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">The Battle of Polytopia</h1>
+	<form action="Game/Index.cshtml" method="post">
+		<label for="my-games" class="toggle">
+			<input type="submit" name="my-games" value="My games" />
+			<span class="toggle-btn">
+
+			</span>
+
+		</label>
+	</form>
+
+</div>
+<style>
+	.toggle .toggle-btn {
+		display: inline-block;
+		width: 60px;
+		text-align: center;
+		padding: 5px 0;
+		font-size: 14px;
+		font-weight: bold;
+		color: white;
+		background-color: lightblue;
+		border-radius: 5px;
+		user-select: none;
+		transition: all 0.3s ease;
+	}
+
+	.toggle .toggle-btn:hover {
+		background-color: white;
+		color: black;
+		border: 1px solid black;
+	}
+</style>
+</body>
+</html>

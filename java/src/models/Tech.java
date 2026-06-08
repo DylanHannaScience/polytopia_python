@@ -1,0 +1,35 @@
+package models;
+
+public enum Tech {
+    NONE,
+
+    FISHING,
+    SAILING,
+    NAVIGATION,
+    AQUACULTURE,
+    AQUATISM,
+
+    HUNTING,
+    ARCHERY,
+    SPIRITUALISM,
+    FORESTRY,
+    MATHEMATICS,
+
+    RIDING,
+    ROADS,
+    TRADE,
+    FREE_SPIRIT,
+    CHIVALRY,
+
+    ORGANIZATION,
+    FARMING,
+    CONSTRUCTION,
+    STRATEGY,
+    DIPLOMACY,
+
+    CLIMBING,
+    MINING,
+    SMITHERY,
+    MEDITATION,
+    PHILOSOPHY
+}

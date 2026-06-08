@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head>
+<body>
+
+﻿﻿@{
+	ViewData["Title"] = "About";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="icons">
+	<img src="~/css/images/Fabbernat-polyhead-icon.jpg" alt="Fabbernat Polyhead Icon" title="Fabbernat Polyhead Icon" />
+</div>
+<div class="about-section">
+	<p><strong>Fabian Team:</strong> A passionate team of developers dedicated to creating engaging and immersive experiences for Polytopia fans.</p>
+
+	<h2>Polysseum</h2>
+	<p>The Polysseum is a platform where strategic minds meet, showcasing the best players and their achievements. It's the ultimate hall of fame for Polytopia enthusiasts.</p>
+
+	<h2>Meet the Team</h2>
+	<p><s>~Midji Team~</s> Fabian Team:</p>
+	<ul>
+		<li><strong>Fabian Bernát:</strong> Lead Developer and visionary behind the project.</li>
+		<li><strong>Midjiwan:</strong> Creator and leader of Polytopia</li>
+		<li><strong>Zoythrus:</strong>Lead Community Manager, Community Member</li>
+		<li>
+			<strong>Midjitone:</strong>Sound, music and ambience. Check out Polytopia music at
+			<ul>
+				<li><a href="https://polytopia.io/polytopia-music/">This link,</a></li>
+				<li><a href="https://polytopia.fandom.com/wiki/Polytopia_Music">and this link!</a></li>
+
+			</ul>
+
+		</li>
+	</ul>
+
+	<h2>Our Mission</h2>
+	<p>To create a space where players can share strategies, celebrate victories, and grow the Polytopia community.</p>
+
+</div>
+<div class="contact">
+	<h3>Contact us!</h3>
+	<ul>
+		<li>Facebook <a href="https://Facebook.com/Fabbernat">https://Facebook.com/Fabbernat</a></li>
+		<li>X (Twitter) <a href="https://x.com/Fabbernat">https://x.com/Fabbernat</a></li>
+		<li>Github: <a href="https://github.com/Fabbernat">https://github.com/Fabbernat</a></li>
+	</ul>
+</div>
+<style>
+	html, body, h1, h2, p, button {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		box-sizing: border-box;
+	}
+
+
+	html {
+		font-size: 14px;
+	}
+
+	html {
+		font-size: 16px;
+	}
+
+
+
+	.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+		box-shadow: 0 0 0 0.1rem black, 0 0 0 0.25rem #258cfb;
+	}
+
+	html {
+		position: relative;
+		min-height: 100%;
+	}
+
+	body {
+		margin-bottom: 60px;
+		background-color: rgb(36,36,36);
+		color: rgb(231,231,231);
+		font-size: 12px;
+		line-height: 1.6;
+		font-family: "Curlz MF",cursive, serif; /* Goofy font */
+		color: lightyellow; /* Base text color */
+	}
+
+	.pet-description {
+		font-size: 1.2em;
+		color: lemonchiffon;
+	}
+
+	.pet-age {
+		font-style: italic;
+		color: lightgoldenrodyellow;
+	}
+
+	/* Category-related styles */
+	.category-name {
+		font-size: 2.5em;
+		color: black;
+		font-weight: bold;
+		text-decoration: underline wavy yellow; /* Wavy underline */
+		padding: 10px;
+		border: 3px dashed yellow; /* Dashed border */
+	}
+
+	.category-description {
+		font-size: 1.5em;
+		color: lightyellow;
+		margin-bottom: 20px;
+	}
+
+	/* General styles for common elements */
+	a {
+		color: yellow;
+		text-decoration: none;
+		font-weight: bold;
+		transition: all 0.2s ease-in-out; /* Smooth transition for hover effect */
+	}
+
+		a:hover {
+			color: lightyellow;
+			text-shadow: 0 0 5px yellow;
+			transform: scale(1.1); /* Slight zoom on hover */
+		}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: black;
+	}
+
+	h1 {
+		font-family: "Curlz MF",cursive, serif; /* Goofy font */
+	}
+
+	h2, h3, h4, h5, h6 {
+		font-family: Impact, Charcoal, sans-serif;
+	}
+
+	main {
+		padding: 20px;
+	}
+
+	div {
+		margin-bottom: 15px;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	th, td {
+		border: 1px solid yellow;
+		padding: 8px;
+		text-align: left;
+	}
+
+	th {
+		background-color: rgb(50, 50, 50);
+		color: black;
+	}
+
+	ul {
+		list-style-position: inside; /* This brings the bullets inside the list item */
+		padding-left: 0; /* Removes default padding that can create extra space */
+	}
+
+	li {
+		margin-left: 0; /* Removes any default margin that might be present */
+	}
+
+	form {
+		padding: 20px;
+		margin: 20px;
+		border: 1px solid #ddd; /* Add a border to the form */
+	}
+
+		form div {
+			padding: 10px; /* Reduce padding within the form's div */
+			margin: 5px; /* Reduce margin within the form's div */
+		}
+
+	label {
+		display: block; /* Make labels stack vertically */
+		margin-bottom: 5px; /* Add space between labels */
+	}
+
+	.no-categories {
+		text-align: center; /* Center the message */
+		margin-bottom: 20px; /* Add space below the message */
+	}
+</style>
+
+</body>
+</html>

@@ -4,7 +4,7 @@ import os
 
 # Third-party
 import numpy as np
-from PIL import Image
+from Pillow import Image
 
 # Local
 import settings

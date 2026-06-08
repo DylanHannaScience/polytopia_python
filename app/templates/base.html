@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Index</a> |
+        <a href="/privacy">Privacy</a> |
+        <a href="/dashboard">Dashboard</a> |
+        <a href="/about">About</a> |
+        <a href="/settings">Settings</a> |
+        <a href="/hall-of-fame">Hall of Fame</a> |
+        <a href="/throne-room">Throne Room</a>
+    </nav>
+    <hr>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -8,6 +8,7 @@ import numpy as np
 # Local
 import settings
 
+
 MAP_HEIGHT = settings.MAP_HEIGHT
 MAP_WIDTH = settings.MAP_WIDTH
 

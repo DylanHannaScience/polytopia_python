@@ -1,2 +1,7 @@
-numpy==1.19.5
-Pillow==8.2.0
+numpy~=2.2.1
+Pillow~=11.1.0
+
+pip~=24.3.1
+Flask~=3.1.0
+
+jinja2
